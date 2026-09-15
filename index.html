@@ -112,6 +112,12 @@ button:active{
   color:#0f6b4d;
 }
 
+.location{
+  text-align:center;
+  color:#666;
+  margin-bottom:10px;
+}
+
 footer{
   text-align:center;
   padding:20px;
@@ -130,7 +136,6 @@ footer{
 
 <div class="container">
 
-<!-- দোয়া ও যিকির -->
 <div class="card">
 <h2>🤲 দোয়া ও যিকির</h2>
 
@@ -146,7 +151,6 @@ footer{
 </div>
 
 
-<!-- তাসবিহ -->
 <div class="card">
 <h2>📿 তাসবিহ</h2>
 
@@ -170,34 +174,37 @@ footer{
 </div>
 
 
-<!-- নামাজের সময় -->
 <div class="card">
 
 <h2>🕌 নামাজের সময়</h2>
 
+<div class="location">
+📍 রংপুর
+</div>
+
 <div class="namaz">
 <span>ফজর</span>
-<span class="time">ভোর</span>
+<span class="time" id="fajr">লোড হচ্ছে...</span>
 </div>
 
 <div class="namaz">
 <span>যোহর</span>
-<span class="time">দুপুর</span>
+<span class="time" id="dhuhr">লোড হচ্ছে...</span>
 </div>
 
 <div class="namaz">
 <span>আসর</span>
-<span class="time">বিকেল</span>
+<span class="time" id="asr">লোড হচ্ছে...</span>
 </div>
 
 <div class="namaz">
 <span>মাগরিব</span>
-<span class="time">সূর্যাস্ত</span>
+<span class="time" id="maghrib">লোড হচ্ছে...</span>
 </div>
 
 <div class="namaz">
 <span>এশা</span>
-<span class="time">রাত</span>
+<span class="time" id="isha">লোড হচ্ছে...</span>
 </div>
 
 <button onclick="namazReminder()">
@@ -207,7 +214,6 @@ footer{
 </div>
 
 
-<!-- কুরআন -->
 <div class="card">
 
 <h2>📖 কুরআন</h2>
@@ -248,7 +254,6 @@ function increaseCount(){
     );
 
   }
-
 }
 
 
@@ -292,7 +297,53 @@ function namazReminder(){
 
 }
 
+
+async function loadPrayerTimes(){
+
+  try{
+
+    const url =
+    "https://api.aladhan.com/v1/timingsByCity" +
+    "?city=Rangpur" +
+    "&country=Bangladesh" +
+    "&method=1" +
+    "&school=1";
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const times = data.data.timings;
+
+    document.getElementById("fajr").innerText =
+      times.Fajr;
+
+    document.getElementById("dhuhr").innerText =
+      times.Dhuhr;
+
+    document.getElementById("asr").innerText =
+      times.Asr;
+
+    document.getElementById("maghrib").innerText =
+      times.Maghrib;
+
+    document.getElementById("isha").innerText =
+      times.Isha;
+
+  }catch(error){
+
+    document.getElementById("fajr").innerText="04:32";
+    document.getElementById("dhuhr").innerText="11:58";
+    document.getElementById("asr").innerText="16:24";
+    document.getElementById("maghrib").innerText="18:07";
+    document.getElementById("isha").innerText="19:25";
+
+  }
+
+}
+
+loadPrayerTimes();
+
 </script>
 
 </body>
-</html>
+</html> 
