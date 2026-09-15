@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নূর — ইসলামিক জীবন</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f8f5;
+      color: #173b2b;
+    }
+
+    header {
+      background: #0f6b4d;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #0f6b4d;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 8px;
+      background: #0f6b4d;
+      color: white;
+      font-size: 17px;
+    }
+
+    #zikrText {
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    #count {
+      text-align: center;
+      font-size: 40px;
+      color: #0f6b4d;
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>নূর — ইসলামিক জীবন</h1>
+    <p>ইসলামের আলোয় সুন্দর জীবন</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>🤲 দোয়া ও যিকির</h2>
+      <p>সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার</p>
+      <button onclick="showZikr()">যিকির শুরু করুন</button>
+      <div id="zikrText"></div>
+    </div>
+
+    <div class="card">
+      <h2>📿 তাসবিহ</h2>
+      <div id="count">0</div>
+      <button onclick="increaseCount()">তাসবিহ গণনা করুন</button>
+      <button onclick="resetCount()">রিসেট</button>
+    </div>
+
+    <div class="card">
+      <h2>🕌 নামাজ</h2>
+      <p>পাঁচ ওয়াক্ত নামাজ সময়মতো আদায় করুন।</p>
+      <button onclick="alert('আল্লাহ আমাদের সবাইকে পাঁচ ওয়াক্ত নামাজ আদায় করার তাওফিক দিন। আমিন 🤲')">
+        নামাজের স্মরণ
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>📖 কুরআন</h2>
+      <p>প্রতিদিন কুরআন তিলাওয়াত করুন এবং অর্থ বোঝার চেষ্টা করুন।</p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 নূর — ইসলামিক জীবন
+  </footer>
+
+  <script>
+    let count = 0;
+
+    function increaseCount() {
+      count++;
+      document.getElementById("count").innerText = count;
+    }
+
+    function resetCount() {
+      count = 0;
+      document.getElementById("count").innerText = count;
+    }
+
+    function showZikr() {
+      document.getElementById("zikrText").innerText =
+        "سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَاللَّهُ أَكْبَرُ";
+    }
+  </script>
+
+</body>
+</html>
