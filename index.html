@@ -91,6 +91,14 @@ button:active{
   line-height:1.7;
 }
 
+.zikrName{
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+  color:#0f6b4d;
+  margin-top:15px;
+}
+
 .small-button{
   background:#4d8b73;
 }
@@ -154,10 +162,14 @@ footer{
 <div class="card">
 <h2>📿 তাসবিহ</h2>
 
+<div class="zikrName" id="zikrName">
+সুবহানাল্লাহ
+</div>
+
 <div class="counter" id="count">0</div>
 
 <div class="target">
-লক্ষ্য: <span id="target">33</span>
+🎯 লক্ষ্য: <span id="target">33</span>
 </div>
 
 <button onclick="increaseCount()">
@@ -184,27 +196,27 @@ footer{
 
 <div class="namaz">
 <span>ফজর</span>
-<span class="time" id="fajr">৪:৩২</span>
+<span class="time">৪:৩২</span>
 </div>
 
 <div class="namaz">
 <span>যোহর</span>
-<span class="time" id="dhuhr">১১:৫৮</span>
+<span class="time">১১:৫৮</span>
 </div>
 
 <div class="namaz">
 <span>আসর</span>
-<span class="time" id="asr">৪:২৪</span>
+<span class="time">৪:২৪</span>
 </div>
 
 <div class="namaz">
 <span>মাগরিব</span>
-<span class="time" id="maghrib">৬:০৮</span>
+<span class="time">৬:০৮</span>
 </div>
 
 <div class="namaz">
 <span>এশা</span>
-<span class="time" id="isha">৭:২৫</span>
+<span class="time">৭:২৫</span>
 </div>
 
 <button onclick="namazReminder()">
