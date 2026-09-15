@@ -168,85 +168,64 @@ footer{
 
 <div class="container">
 
-<!-- দোয়া ও যিকির -->
 <div class="card">
 <h2>🤲 দোয়া ও যিকির</h2>
 
-<p>
-সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার
-</p>
+<p>সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার</p>
 
-<button onclick="showZikr()">
-যিকির শুরু করুন
-</button>
+<button onclick="showZikr()">যিকির শুরু করুন</button>
 
 <div id="zikrText"></div>
 </div>
 
-
-<!-- দৈনন্দিন দোয়া -->
 <div class="card">
 <h2>🤲 দৈনন্দিন দোয়া</h2>
 
 <div class="dua">
 <h3>🌙 ঘুমানোর দোয়া</h3>
-
 <div class="arabic">
 بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا
 </div>
-
 <p class="meaning">
 অর্থ: হে আল্লাহ! তোমার নামেই আমি মৃত্যুবরণ করি এবং জীবিত হই।
 </p>
 </div>
 
-
 <div class="dua">
 <h3>🌅 ঘুম থেকে ওঠার দোয়া</h3>
-
 <div class="arabic">
 الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ
 </div>
-
 <p class="meaning">
 অর্থ: সমস্ত প্রশংসা আল্লাহর জন্য, যিনি আমাদের মৃত্যুর পর জীবিত করেছেন এবং তাঁর কাছেই ফিরে যেতে হবে।
 </p>
 </div>
 
-
 <div class="dua">
 <h3>🍚 খাবার শুরুর দোয়া</h3>
-
 <div class="arabic">
 بِسْمِ اللَّهِ
 </div>
-
 <p class="meaning">
 অর্থ: আল্লাহর নামে শুরু করছি।
 </p>
 </div>
 
-
 <div class="dua">
 <h3>🚪 ঘর থেকে বের হওয়ার দোয়া</h3>
-
 <div class="arabic">
 بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ
 </div>
-
 <p class="meaning">
 অর্থ: আল্লাহর নামে বের হলাম, আল্লাহর ওপর ভরসা করলাম। আল্লাহ ছাড়া কোনো শক্তি ও সামর্থ্য নেই।
 </p>
 </div>
 
-
 <div class="dua">
 <h3>🕌 মসজিদে যাওয়ার দোয়া</h3>
-
 <div class="arabic">
 اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا
 </div>
-
 <p class="meaning">
 অর্থ: হে আল্লাহ! আমার অন্তরে নূর দান করুন।
 </p>
@@ -254,14 +233,10 @@ footer{
 
 </div>
 
-
-<!-- তাসবিহ -->
 <div class="card">
 <h2>📿 তাসবিহ</h2>
 
-<div class="zikrName" id="zikrName">
-সুবহানাল্লাহ
-</div>
+<div class="zikrName">সুবহানাল্লাহ</div>
 
 <div class="counter" id="count">0</div>
 
@@ -269,9 +244,7 @@ footer{
 🎯 লক্ষ্য: <span id="target">33</span>
 </div>
 
-<button onclick="increaseCount()">
-📿 তাসবিহ গণনা করুন
-</button>
+<button onclick="increaseCount()">📿 তাসবিহ গণনা করুন</button>
 
 <button class="small-button" onclick="changeTarget()">
 🎯 লক্ষ্য ৩৩ / ৯৯
@@ -282,15 +255,10 @@ footer{
 </button>
 </div>
 
-
-<!-- নামাজ -->
 <div class="card">
-
 <h2>🕌 নামাজের সময়</h2>
 
-<div class="location">
-📍 রংপুর
-</div>
+<div class="location">📍 রংপুর</div>
 
 <div class="namaz">
 <span>ফজর</span>
@@ -320,36 +288,27 @@ footer{
 <button onclick="namazReminder()">
 🤲 নামাজের স্মরণ
 </button>
-
 </div>
 
-
-<!-- কুরআন -->
 <div class="card">
-
 <h2>📖 কুরআন</h2>
 
 <p>
 প্রতিদিন কুরআন তিলাওয়াত করুন এবং অর্থ বোঝার চেষ্টা করুন।
 </p>
-
 </div>
 
 </div>
-
 
 <footer>
 © 2026 নূর — ইসলামিক জীবন
 </footer>
 
-
 <script>
-
 let count=0;
 let target=33;
 
 function increaseCount(){
-
   if(count<target){
     count++;
   }
@@ -357,28 +316,20 @@ function increaseCount(){
   document.getElementById("count").innerText=count;
 
   if(count===target){
-
     alert(
       "আলহামদুলিল্লাহ! আপনার "+
       target+
       " বার তাসবিহ সম্পন্ন হয়েছে। 🤲"
     );
-
   }
 }
 
-
 function resetCount(){
-
   count=0;
-
   document.getElementById("count").innerText=count;
-
 }
 
-
 function changeTarget(){
-
   if(target===33){
     target=99;
   }else{
@@ -386,28 +337,19 @@ function changeTarget(){
   }
 
   document.getElementById("target").innerText=target;
-
   resetCount();
-
 }
-
 
 function showZikr(){
-
   document.getElementById("zikrText").innerText=
   "سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَاللَّهُ أَكْبَرُ";
-
 }
 
-
 function namazReminder(){
-
   alert(
     "আল্লাহ আমাদের সবাইকে পাঁচ ওয়াক্ত নামাজ আদায় করার তাওফিক দিন। আমিন 🤲"
   );
-
 }
-
 </script>
 
 </body>
