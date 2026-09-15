@@ -184,27 +184,27 @@ footer{
 
 <div class="namaz">
 <span>ফজর</span>
-<span class="time" id="fajr">লোড হচ্ছে...</span>
+<span class="time" id="fajr">৪:৩২</span>
 </div>
 
 <div class="namaz">
 <span>যোহর</span>
-<span class="time" id="dhuhr">লোড হচ্ছে...</span>
+<span class="time" id="dhuhr">১১:৫৮</span>
 </div>
 
 <div class="namaz">
 <span>আসর</span>
-<span class="time" id="asr">লোড হচ্ছে...</span>
+<span class="time" id="asr">৪:২৪</span>
 </div>
 
 <div class="namaz">
 <span>মাগরিব</span>
-<span class="time" id="maghrib">লোড হচ্ছে...</span>
+<span class="time" id="maghrib">৬:০৮</span>
 </div>
 
 <div class="namaz">
 <span>এশা</span>
-<span class="time" id="isha">লোড হচ্ছে...</span>
+<span class="time" id="isha">৭:২৫</span>
 </div>
 
 <button onclick="namazReminder()">
@@ -297,53 +297,7 @@ function namazReminder(){
 
 }
 
-
-async function loadPrayerTimes(){
-
-  try{
-
-    const url =
-    "https://api.aladhan.com/v1/timingsByCity" +
-    "?city=Rangpur" +
-    "&country=Bangladesh" +
-    "&method=1" +
-    "&school=1";
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    const times = data.data.timings;
-
-    document.getElementById("fajr").innerText =
-      times.Fajr;
-
-    document.getElementById("dhuhr").innerText =
-      times.Dhuhr;
-
-    document.getElementById("asr").innerText =
-      times.Asr;
-
-    document.getElementById("maghrib").innerText =
-      times.Maghrib;
-
-    document.getElementById("isha").innerText =
-      times.Isha;
-
-  }catch(error){
-
-    document.getElementById("fajr").innerText="04:32";
-    document.getElementById("dhuhr").innerText="11:58";
-    document.getElementById("asr").innerText="16:24";
-    document.getElementById("maghrib").innerText="18:07";
-    document.getElementById("isha").innerText="19:25";
-
-  }
-
-}
-
-loadPrayerTimes();
-
 </script>
 
 </body>
-</html> 
+</html>
