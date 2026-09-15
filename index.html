@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>নূর — ইসলামিক জীবন</title>
 
 <style>
@@ -94,6 +95,23 @@ button:active{
   background:#4d8b73;
 }
 
+.namaz{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #ddd;
+  font-size:17px;
+}
+
+.namaz:last-child{
+  border-bottom:0;
+}
+
+.time{
+  font-weight:bold;
+  color:#0f6b4d;
+}
+
 footer{
   text-align:center;
   padding:20px;
@@ -112,15 +130,23 @@ footer{
 
 <div class="container">
 
+<!-- দোয়া ও যিকির -->
 <div class="card">
 <h2>🤲 দোয়া ও যিকির</h2>
-<p>সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার</p>
 
-<button onclick="showZikr()">যিকির শুরু করুন</button>
+<p>
+সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার
+</p>
+
+<button onclick="showZikr()">
+যিকির শুরু করুন
+</button>
 
 <div id="zikrText"></div>
 </div>
 
+
+<!-- তাসবিহ -->
 <div class="card">
 <h2>📿 তাসবিহ</h2>
 
@@ -130,7 +156,9 @@ footer{
 লক্ষ্য: <span id="target">33</span>
 </div>
 
-<button onclick="increaseCount()">📿 তাসবিহ গণনা করুন</button>
+<button onclick="increaseCount()">
+📿 তাসবিহ গণনা করুন
+</button>
 
 <button class="small-button" onclick="changeTarget()">
 🎯 লক্ষ্য ৩৩ / ৯৯
@@ -141,33 +169,70 @@ footer{
 </button>
 </div>
 
+
+<!-- নামাজের সময় -->
 <div class="card">
-<h2>🕌 নামাজ</h2>
-<p>পাঁচ ওয়াক্ত নামাজ সময়মতো আদায় করুন।</p>
+
+<h2>🕌 নামাজের সময়</h2>
+
+<div class="namaz">
+<span>ফজর</span>
+<span class="time">ভোর</span>
+</div>
+
+<div class="namaz">
+<span>যোহর</span>
+<span class="time">দুপুর</span>
+</div>
+
+<div class="namaz">
+<span>আসর</span>
+<span class="time">বিকেল</span>
+</div>
+
+<div class="namaz">
+<span>মাগরিব</span>
+<span class="time">সূর্যাস্ত</span>
+</div>
+
+<div class="namaz">
+<span>এশা</span>
+<span class="time">রাত</span>
+</div>
 
 <button onclick="namazReminder()">
-নামাজের স্মরণ
+🤲 নামাজের স্মরণ
 </button>
+
 </div>
 
+
+<!-- কুরআন -->
 <div class="card">
+
 <h2>📖 কুরআন</h2>
+
 <p>
-প্রতিদিন কুরআন তিলাওয়াত করুন এবং অর্থ বোঝার চেষ্টা করুন।
+প্রতিদিন কুরআন তিলাওয়াত করুন এবং অর্থ বোঝার চেষ্টা করুন।
 </p>
+
 </div>
 
 </div>
+
 
 <footer>
 © 2026 নূর — ইসলামিক জীবন
 </footer>
 
+
 <script>
+
 let count=0;
 let target=33;
 
 function increaseCount(){
+
   if(count<target){
     count++;
   }
@@ -175,20 +240,29 @@ function increaseCount(){
   document.getElementById("count").innerText=count;
 
   if(count===target){
+
     alert(
       "আলহামদুলিল্লাহ! আপনার "+
       target+
-      " বার তাসবিহ সম্পন্ন হয়েছে। 🤲"
+      " বার তাসবিহ সম্পন্ন হয়েছে। 🤲"
     );
+
   }
+
 }
+
 
 function resetCount(){
+
   count=0;
+
   document.getElementById("count").innerText=count;
+
 }
 
+
 function changeTarget(){
+
   if(target===33){
     target=99;
   }else{
@@ -196,19 +270,28 @@ function changeTarget(){
   }
 
   document.getElementById("target").innerText=target;
+
   resetCount();
+
 }
+
 
 function showZikr(){
+
   document.getElementById("zikrText").innerText=
   "سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَاللَّهُ أَكْبَرُ";
+
 }
 
+
 function namazReminder(){
+
   alert(
-    "আল্লাহ আমাদের সবাইকে পাঁচ ওয়াক্ত নামাজ আদায় করার তাওফিক দিন। আমিন 🤲"
+    "আল্লাহ আমাদের সবাইকে পাঁচ ওয়াক্ত নামাজ আদায় করার তাওফিক দিন। আমিন 🤲"
   );
+
 }
+
 </script>
 
 </body>
